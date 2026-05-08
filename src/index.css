@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --animate-fade-in-up: fade-in-up 0.4s ease-out forwards;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  --shadow-premium: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-premium-dark: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(79, 70, 229, 0.15);
+}
+
+.mesh-gradient {
+  background-color: transparent;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+  filter: blur(100px);
+  opacity: 0.15;
+}
+
+.animate-border-glow {
+  background-size: 200% 200%;
+  animation: border-glow 4s linear infinite;
+}
+
+@keyframes border-glow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 98.5%;
+    /* Soft off-white */
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    /* Deep slate premium background instead of harsh black */
+    --background: 222 47% 10%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] antialiased transition-colors duration-500 ease-in-out;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+/* Standardized focus states */
+*:focus-visible {
+  @apply outline-none ring-2 ring-indigo-500 ring-offset-2 font-medium duration-150;
+}
+
+.dark *:focus-visible {
+  @apply ring-offset-[hsl(var(--background))];
+}
+
+/* Custom Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-200 dark:bg-indigo-900/50 rounded-full transition-all duration-300;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-indigo-300 dark:bg-indigo-800/80;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  @apply bg-white/70 dark:bg-gray-900/60 backdrop-blur-md border border-white/20 dark:border-gray-700/50;
+}
+
+/* Smooth Image scaling */
+img {
+  @apply object-cover;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 24px 24px;
+}
