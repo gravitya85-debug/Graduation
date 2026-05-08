@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { Toaster } from 'react-hot-toast';
 
@@ -30,7 +30,7 @@ import DoctorRoutes from './features/doctor/routes';
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter basename="/Graduation">
+      <HashRouter>
         <Toaster position="top-right" />
         <Routes>
           {/* Public Routes */}
@@ -77,7 +77,7 @@ function App() {
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   );
 }
