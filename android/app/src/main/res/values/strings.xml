@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">graduation</string>
-    <string name="title_activity_main">graduation</string>
-    <string name="package_name">com.graduation.app</string>
-    <string name="custom_url_scheme">com.graduation.app</string>
-</resources>

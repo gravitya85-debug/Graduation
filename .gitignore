@@ -15,6 +15,14 @@ dist-ssr
 .env.*
 !.env.example
 
+# Mobile platforms
+android/
+ios/
+
+# Supabase schemas and SQL files
+supabase-*.sql
+*.sql
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
