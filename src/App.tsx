@@ -30,7 +30,7 @@ import DoctorRoutes from './features/doctor/routes';
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/Graduation">
         <Toaster position="top-right" />
         <Routes>
           {/* Public Routes */}
