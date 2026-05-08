@@ -19,6 +19,9 @@ dist-ssr
 android/
 ios/
 
+# Project skills
+skills/
+
 # Supabase schemas and SQL files
 supabase-*.sql
 *.sql
