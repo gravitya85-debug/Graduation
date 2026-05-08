@@ -103,7 +103,7 @@ export default function Sidebar({ mobileMenuOpen, setMobileMenuOpen }: { mobileM
                                 </span>
                             </div>
                             <div className="bg-white dark:bg-gray-800 p-1 rounded-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md ring-1 ring-gray-200 dark:ring-gray-700">
-                                <img src="/images/logo.png" alt="University Logo" className="h-10 w-10 object-contain" />
+                                <img src="/Graduation/images/logo.png" alt="University Logo" className="h-10 w-10 object-contain" />
                             </div>
                         </div>
                         <button
