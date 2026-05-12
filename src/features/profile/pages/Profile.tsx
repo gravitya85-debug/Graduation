@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../../context/AuthContext';
 import { supabase } from '../../../lib/supabase';
 import { toast } from 'react-hot-toast';
-import { User, Phone, Briefcase, GraduationCap, FileText, UploadCloud, Loader2, MapPin, Building, Award, BookOpen, Calendar } from 'lucide-react';
+import { User, Phone, Briefcase, GraduationCap, FileText, UploadCloud, Loader2, MapPin, Building, Award, BookOpen, Calendar, AlertTriangle, Trash2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import PageBanner from '../../../components/PageBanner';
 import TagInput from '../../../components/TagInput';
 
 export default function Profile() {
-    const { user, role, refreshProfile } = useAuth();
+    const { user, role, refreshProfile, deleteAccount } = useAuth();
     const { t } = useTranslation();
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
     const [uploading, setUploading] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [deleteConfirmText, setDeleteConfirmText] = useState('');
+    const [deleting, setDeleting] = useState(false);
 
     const [profileData, setProfileData] = useState({
         name: '',
@@ -490,6 +493,90 @@ export default function Profile() {
                     </div>
                 </form>
             </div>
+
+            {/* Danger Zone - Delete Account */}
+            <div className="bg-red-50/80 dark:bg-red-950/30 backdrop-blur-xl shadow-lg rounded-2xl p-6 sm:p-10 border border-red-200 dark:border-red-800/50 transition-all duration-300">
+                <h3 className="text-lg font-bold text-red-700 dark:text-red-400 flex items-center gap-2 mb-2">
+                    <AlertTriangle className="w-5 h-5" /> {t('profile.dangerZone')}
+                </h3>
+                <p className="text-sm text-red-600/80 dark:text-red-400/70 mb-4">
+                    {t('profile.deleteAccountDesc')}
+                </p>
+                <button
+                    type="button"
+                    onClick={() => setShowDeleteModal(true)}
+                    className="bg-red-600 hover:bg-red-700 text-white font-bold py-2.5 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 active:scale-95"
+                >
+                    <Trash2 className="w-4 h-4" /> {t('profile.deleteAccount')}
+                </button>
+            </div>
+
+            {/* Delete Confirmation Modal */}
+            {showDeleteModal && (
+                <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4 border border-red-200 dark:border-red-800/50">
+                        <div className="flex items-center gap-3">
+                            <div className="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/50 flex items-center justify-center flex-shrink-0">
+                                <AlertTriangle className="w-6 h-6 text-red-600 dark:text-red-400" />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-red-700 dark:text-red-400">
+                                    {t('profile.deleteAccount')}
+                                </h3>
+                            </div>
+                        </div>
+
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {t('profile.deleteAccountConfirm')}
+                        </p>
+
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                {t('profile.typeToConfirm')}
+                            </label>
+                            <input
+                                type="text"
+                                className="w-full px-4 py-3 border border-red-300 dark:border-red-700 bg-white dark:bg-gray-900/50 text-gray-900 dark:text-white rounded-xl focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none transition-all"
+                                value={deleteConfirmText}
+                                onChange={(e) => setDeleteConfirmText(e.target.value)}
+                                placeholder={t('profile.deleteConfirmPhrase')}
+                                dir="auto"
+                            />
+                        </div>
+
+                        <div className="flex gap-3 pt-2">
+                            <button
+                                type="button"
+                                onClick={() => { setShowDeleteModal(false); setDeleteConfirmText(''); }}
+                                className="flex-1 py-2.5 px-4 border border-gray-300 dark:border-gray-600 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium transition-colors"
+                            >
+                                {t('common.cancel')}
+                            </button>
+                            <button
+                                type="button"
+                                disabled={deleteConfirmText !== t('profile.deleteConfirmPhrase') || deleting}
+                                onClick={async () => {
+                                    try {
+                                        setDeleting(true);
+                                        await deleteAccount();
+                                        toast.success(t('profile.deleteAccountSuccess'));
+                                    } catch (error) {
+                                        console.error(error);
+                                        toast.error(t('profile.deleteAccountError'));
+                                    } finally {
+                                        setDeleting(false);
+                                        setShowDeleteModal(false);
+                                    }
+                                }}
+                                className="flex-1 py-2.5 px-4 bg-red-600 hover:bg-red-700 text-white rounded-xl font-bold transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            >
+                                {deleting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
+                                {t('profile.deleteAccount')}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

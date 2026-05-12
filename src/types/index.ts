@@ -19,6 +19,7 @@ export interface AuthContextType {
     login: (email: string, password: string) => Promise<any>;
     register: (email: string, password: string, userData: { name: string, role: UserRole }) => Promise<any>;
     logout: () => Promise<any>;
+    deleteAccount: () => Promise<void>;
     refreshProfile: () => void;
 }
 

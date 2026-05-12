@@ -165,6 +165,39 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         return { data, error };
     };
 
+    const deleteAccount = async () => {
+        if (!user) return;
+        const userId = user.id;
+
+        // Delete role-specific data first
+        if (role === 'graduate') {
+            await supabase.from('job_applications').delete().eq('user_id', userId);
+            await supabase.from('course_enrollments').delete().eq('user_id', userId);
+            await supabase.from('course_reviews').delete().eq('user_id', userId);
+            await supabase.from('postgrad_applications').delete().eq('user_id', userId);
+            await supabase.from('workshop_registrations').delete().eq('user_id', userId);
+            await supabase.from('certificates').delete().eq('user_id', userId);
+            await supabase.from('graduates').delete().eq('user_id', userId);
+        } else if (role === 'company') {
+            await supabase.from('jobs').delete().eq('posted_by', userId);
+            await supabase.from('companies').delete().eq('user_id', userId);
+        } else if (role === 'doctor') {
+            await supabase.from('doctors').delete().eq('user_id', userId);
+        }
+
+        // Delete notifications and payments
+        await supabase.from('notifications').delete().eq('user_id', userId);
+        await supabase.from('payments').delete().eq('user_id', userId);
+
+        // Delete user record
+        await supabase.from('users').delete().eq('id', userId);
+
+        // Sign out
+        setRole(null);
+        setUserName(null);
+        await supabase.auth.signOut();
+    };
+
     const logout = async () => {
         setRole(null);
         setUserName(null);
@@ -181,6 +214,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         login,
         register,
         logout,
+        deleteAccount,
         refreshProfile
     }), [session, user, role, userName, isProfileComplete, loading]);
 

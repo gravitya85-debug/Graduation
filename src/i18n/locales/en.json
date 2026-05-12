@@ -116,7 +116,15 @@
         "incompleteError": "Please complete your profile information first to perform this action.",
         "incompleteError_graduate": "Please complete your profile information first (Name, Phone, Specialization, and Graduation Year) to perform this action.",
         "incompleteError_company": "Please complete your company profile first (Description, Industry, and Location) to perform this action.",
-        "incompleteError_doctor": "Please complete your profile information first (Department, Degree, and Bio) to perform this action."
+        "incompleteError_doctor": "Please complete your profile information first (Department, Degree, and Bio) to perform this action.",
+        "deleteAccount": "Delete My Account",
+        "deleteAccountDesc": "Your account and all associated data will be permanently deleted. This action cannot be undone.",
+        "deleteAccountConfirm": "Are you sure you want to permanently delete your account? You will not be able to recover your data.",
+        "deleteAccountSuccess": "Account deleted successfully",
+        "deleteAccountError": "Failed to delete account, please try again",
+        "typeToConfirm": "Type \"delete my account\" to confirm",
+        "deleteConfirmPhrase": "delete my account",
+        "dangerZone": "Danger Zone"
     },
     "admin": {
         "title": "Admin Control Panel",
