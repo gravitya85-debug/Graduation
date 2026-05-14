@@ -112,7 +112,7 @@ export default function Workshops() {
     return (
         <div className="max-w-7xl mx-auto space-y-8 pb-12">
             <PageBanner
-                image="/images/courses-banner.png"
+                image="images/courses-banner.png"
                 title={t('workshops.title')}
                 subtitle={t('workshops.subtitle')}
                 icon={<Calendar className="w-7 h-7 text-white" />}
@@ -234,4 +234,5 @@ function Clock({ className }: { className?: string }) {
         </svg>
     )
 }
+
 

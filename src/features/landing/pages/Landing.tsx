@@ -139,7 +139,7 @@ export default function Landing() {
                     <div className="glass-panel px-6 py-4 rounded-[2rem] flex justify-between items-center shadow-lg shadow-indigo-500/5">
                         <div className="flex items-center gap-4 group cursor-pointer">
                             <div className="w-12 h-12 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center shadow-md p-2 border border-white dark:border-gray-700 group-hover:rotate-12 transition-transform duration-500">
-                                <img src="/images/logo.png" alt="University Logo" className="w-full h-full object-contain" />
+                                <img src="images/logo.png" alt="University Logo" className="w-full h-full object-contain" />
                             </div>
                             <span className="text-xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-indigo-600 to-gray-600 dark:from-white dark:via-indigo-400 dark:to-gray-300 tracking-tight">
                                 {t('navbar.brandNameShort')}
@@ -258,7 +258,7 @@ export default function Landing() {
                                 className="relative z-10"
                             >
                                 <img
-                                    src="/images/graduates-kfs.png"
+                                    src="images/graduates-kfs.png"
                                     alt="خريجون يحتفلون بالتخرج في جامعة كفر الشيخ"
                                     className="w-full h-auto rounded-[2.5rem] shadow-2xl border-4 border-white/40 dark:border-gray-700/40 object-cover aspect-[4/3] backdrop-blur-sm"
                                 />
@@ -521,7 +521,7 @@ export default function Landing() {
                                                     {/* Image Container */}
                                                     <div className="relative h-64 overflow-hidden">
                                                         <img 
-                                                            src={grad.image_url || '/images/default-avatar.png'} 
+                                                            src={grad.image_url || 'images/default-avatar.png'} 
                                                             alt={grad.name}
                                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                                         />
@@ -622,7 +622,7 @@ export default function Landing() {
 
             <section className="py-32 px-4 relative z-10 group/cta">
                 <div className="max-w-6xl mx-auto glass-panel rounded-[3rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl border-white/20">
-                    <img src="/images/jobs-bg.png" alt="" className="absolute inset-0 w-full h-full object-cover scale-110 group-hover/cta:scale-100 transition-transform duration-[2s] ease-out opacity-40" />
+                    <img src="images/jobs-bg.png" alt="" className="absolute inset-0 w-full h-full object-cover scale-110 group-hover/cta:scale-100 transition-transform duration-[2s] ease-out opacity-40" />
                     <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/95 via-indigo-800/90 to-purple-900/95"></div>
 
                     <div className="absolute -top-[20%] -right-[10%] w-[40%] h-[40%] bg-white/5 rounded-full blur-3xl"></div>
@@ -664,7 +664,7 @@ export default function Landing() {
                         <div className="lg:col-span-4 space-y-10">
                             <a href="https://kfs.edu.eg/specific/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 hover:opacity-80 transition-opacity">
                                 <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-2xl flex items-center justify-center p-3 shadow-2xl border border-white/50 dark:border-gray-700/50">
-                                    <img src="/images/logo.png" alt="University Logo" className="h-full w-full object-contain" />
+                                    <img src="images/logo.png" alt="University Logo" className="h-full w-full object-contain" />
                                 </div>
                                 <div>
                                     <h4 className="text-xl font-black text-gray-900 dark:text-white leading-tight uppercase tracking-tight">
@@ -783,4 +783,5 @@ export default function Landing() {
         </div>
     );
 }
+
 

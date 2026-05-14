@@ -106,7 +106,7 @@ export default function DoctorWorkshops() {
     return (
         <div className="max-w-7xl mx-auto space-y-6 pb-12">
             <PageBanner
-                image="/images/courses-banner.png"
+                image="images/courses-banner.png"
                 title={t('workshops.adminTitle') || 'Manage My Workshops'}
                 subtitle={t('workshops.adminSubtitle') || 'Organize and manage attendees for your events.'}
                 icon={<Calendar className="w-7 h-7 text-white" />}
@@ -164,4 +164,5 @@ export default function DoctorWorkshops() {
         </div>
     );
 }
+
 

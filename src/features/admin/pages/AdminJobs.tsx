@@ -73,7 +73,7 @@ export default function AdminJobs() {
 
     return (
         <div className="max-w-7xl mx-auto space-y-6">
-            <PageBanner image="/images/jobs-bg.png" title={t('admin.jobsTitle')} subtitle={t('admin.jobsSubtitle')} icon={<Briefcase className="w-7 h-7 text-white" />} gradient="from-blue-700/85 to-cyan-700/85" />
+            <PageBanner image="images/jobs-bg.png" title={t('admin.jobsTitle')} subtitle={t('admin.jobsSubtitle')} icon={<Briefcase className="w-7 h-7 text-white" />} gradient="from-blue-700/85 to-cyan-700/85" />
 
             <div className="flex justify-end">
                 <button onClick={() => { setEditingItem(null); setShowModal(true); }} className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-2.5 px-6 rounded-xl shadow-md hover:shadow-lg flex items-center gap-2 active:scale-95 transition-all duration-300">
@@ -100,4 +100,5 @@ export default function AdminJobs() {
         </div>
     );
 }
+
 

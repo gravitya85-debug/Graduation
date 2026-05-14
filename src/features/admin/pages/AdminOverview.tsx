@@ -51,7 +51,7 @@ export default function AdminOverview() {
 
     return (
         <div className="max-w-7xl mx-auto space-y-6">
-            <PageBanner image="/images/dashboard-bg.png" title={t('admin.overviewTitle')} subtitle={t('admin.overviewSubtitle')} icon={<BarChart3 className="w-7 h-7 text-white" />} gradient="from-red-700/85 to-rose-700/85" />
+            <PageBanner image="images/dashboard-bg.png" title={t('admin.overviewTitle')} subtitle={t('admin.overviewSubtitle')} icon={<BarChart3 className="w-7 h-7 text-white" />} gradient="from-red-700/85 to-rose-700/85" />
 
             {loading ? (
                 <div className="flex justify-center py-16"><Loader2 className="w-8 h-8 text-indigo-500 animate-spin" /></div>
@@ -71,4 +71,5 @@ export default function AdminOverview() {
         </div>
     );
 }
+
 

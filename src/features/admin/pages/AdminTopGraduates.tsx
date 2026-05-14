@@ -252,7 +252,7 @@ export default function AdminTopGraduates() {
                                 <div className="flex items-start justify-between mb-4">
                                     <div className="h-16 w-16 rounded-2xl overflow-hidden border-2 border-white dark:border-gray-800 shadow-sm">
                                         <img
-                                            src={grad.image_url || '/images/default-avatar.png'}
+                                            src={grad.image_url || 'images/default-avatar.png'}
                                             alt={grad.name}
                                             className="h-full w-full object-cover"
                                         />
@@ -445,4 +445,5 @@ export default function AdminTopGraduates() {
         </div>
     );
 }
+
 

@@ -35,7 +35,7 @@ export default function Login() {
             {/* Image Side */}
             <div className="hidden lg:flex lg:w-1/2 relative">
                 <img
-                    src="/images/auth-bg.png"
+                    src="images/auth-bg.png"
                     alt="University campus"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -43,7 +43,7 @@ export default function Login() {
                 <div className="relative z-10 flex flex-col justify-end p-12 text-white">
                     <div className="flex items-center gap-3 mb-6">
                         <div className="w-14 h-14 bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center p-2">
-                            <img src="/images/logo.png" alt="University Logo" className="w-full h-full object-contain brightness-110 shadow-sm" />
+                            <img src="images/logo.png" alt="University Logo" className="w-full h-full object-contain brightness-110 shadow-sm" />
                         </div>
                         <span className="text-2xl font-extrabold uppercase tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-200">{t('navbar.brandNameShort')}</span>
                     </div>
@@ -63,7 +63,7 @@ export default function Login() {
                 <div className="max-w-md w-full space-y-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl p-8 sm:p-10 rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-700/50 relative z-10 animate-fade-in-up">
                     <div className="text-center">
                         <div className="mx-auto h-20 w-20 bg-white/80 dark:bg-gray-800/40 backdrop-blur-lg rounded-2xl flex items-center justify-center shadow-lg border border-white dark:border-gray-700/50 p-3 mb-6 lg:hidden">
-                            <img src="/images/logo.png" alt="University Logo" className="w-full h-full object-contain" />
+                            <img src="images/logo.png" alt="University Logo" className="w-full h-full object-contain" />
                         </div>
                         <h2 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300">
                             {t('auth.loginTitle')}
@@ -116,4 +116,5 @@ export default function Login() {
         </div>
     );
 }
+
 

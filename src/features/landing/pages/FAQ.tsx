@@ -32,7 +32,7 @@ export default function FAQ() {
 
             <div className="max-w-4xl mx-auto space-y-12 relative z-10">
                 <PageBanner
-                    image="/images/dashboard-bg.png"
+                    image="images/dashboard-bg.png"
                     title={t('faq.title')}
                     subtitle={t('faq.subtitle')}
                     icon={<HelpCircle className="w-7 h-7 text-white" />}
@@ -89,4 +89,5 @@ export default function FAQ() {
         </div>
     );
 }
+
 

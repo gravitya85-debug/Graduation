@@ -84,7 +84,7 @@ export default function Applicants() {
     return (
         <div className="max-w-6xl mx-auto space-y-6">
             <PageBanner
-                image="/images/hero-bg.png"
+                image="images/hero-bg.png"
                 title={t('applicants.title')}
                 subtitle={t('applicants.subtitle')}
                 icon={<Users className="w-7 h-7 text-white" />}
@@ -219,4 +219,5 @@ export default function Applicants() {
         </div>
     );
 }
+
 

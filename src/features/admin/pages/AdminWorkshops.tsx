@@ -105,7 +105,7 @@ export default function AdminWorkshops() {
     return (
         <div className="max-w-7xl mx-auto space-y-6 pb-12">
             <PageBanner
-                image="/images/courses-banner.png"
+                image="images/courses-banner.png"
                 title={t('workshops.adminTitle')}
                 subtitle={t('workshops.adminSubtitle')}
                 icon={<Calendar className="w-7 h-7 text-white" />}
@@ -163,4 +163,5 @@ export default function AdminWorkshops() {
         </div>
     );
 }
+
 

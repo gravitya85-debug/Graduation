@@ -116,7 +116,7 @@ export default function Jobs() {
     return (
         <div className="max-w-6xl mx-auto space-y-6">
             <PageBanner
-                image="/images/jobs-bg.png"
+                image="images/jobs-bg.png"
                 title={t('jobs.title')}
                 subtitle={t('jobs.subtitle')}
                 icon={<Briefcase className="w-7 h-7 text-white" />}
@@ -302,4 +302,5 @@ export default function Jobs() {
         </div>
     );
 }
+
 

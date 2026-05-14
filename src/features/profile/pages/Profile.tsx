@@ -219,7 +219,7 @@ export default function Profile() {
     return (
         <div className="max-w-4xl mx-auto space-y-6">
             <PageBanner
-                image="/images/profile-banner.png"
+                image="images/profile-banner.png"
                 title={t('profile.title')}
                 icon={<User className="w-7 h-7 text-white" />}
                 gradient="from-teal-700/85 to-cyan-700/85"
@@ -580,4 +580,5 @@ export default function Profile() {
         </div>
     );
 }
+
 

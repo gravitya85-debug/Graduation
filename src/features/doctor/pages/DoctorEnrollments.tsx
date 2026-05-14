@@ -65,7 +65,7 @@ export default function DoctorEnrollments() {
     return (
         <div className="max-w-7xl mx-auto space-y-8 pb-12">
             <PageBanner
-                image="/images/certificates-banner.png"
+                image="images/certificates-banner.png"
                 title={t('sidebar.enrollments') || 'Student Enrollments'}
                 subtitle={t('admin.enrollmentsSubtitle') || 'View graduates who enrolled in your courses.'}
                 icon={<ClipboardList className="w-7 h-7 text-white" />}
@@ -95,4 +95,5 @@ export default function DoctorEnrollments() {
         </div>
     );
 }
+
 

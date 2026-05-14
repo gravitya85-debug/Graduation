@@ -136,7 +136,7 @@ export default function ManageJobs() {
     return (
         <div className="max-w-6xl mx-auto space-y-6">
             <PageBanner
-                image="/images/jobs-bg.png"
+                image="images/jobs-bg.png"
                 title={t('manageJobs.title')}
                 subtitle={t('manageJobs.subtitle')}
                 icon={<Briefcase className="w-7 h-7 text-white" />}
@@ -248,4 +248,5 @@ export default function ManageJobs() {
         </div>
     );
 }
+
 

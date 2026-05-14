@@ -57,7 +57,7 @@ export default function Postgraduate() {
     return (
         <div className="max-w-6xl mx-auto space-y-6">
             <PageBanner
-                image="/images/postgraduate-banner.png"
+                image="images/postgraduate-banner.png"
                 title={t('postgraduate.title')}
                 subtitle={t('postgraduate.subtitle')}
                 icon={<GraduationCap className="w-7 h-7 text-white" />}
@@ -142,4 +142,5 @@ export default function Postgraduate() {
         </div>
     );
 }
+
 

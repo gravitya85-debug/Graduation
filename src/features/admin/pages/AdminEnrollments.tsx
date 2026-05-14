@@ -94,7 +94,7 @@ export default function AdminEnrollments() {
     return (
         <div className="max-w-7xl mx-auto space-y-8 pb-12">
             <PageBanner
-                image="/images/certificates-banner.png"
+                image="images/certificates-banner.png"
                 title={t('admin.enrollmentsTitle')}
                 subtitle={t('admin.enrollmentsSubtitle')}
                 icon={<ClipboardList className="w-7 h-7 text-white" />}
@@ -146,4 +146,5 @@ export default function AdminEnrollments() {
         </div>
     );
 }
+
 

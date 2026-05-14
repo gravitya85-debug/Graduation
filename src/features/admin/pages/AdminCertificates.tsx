@@ -163,7 +163,7 @@ export default function AdminCertificates() {
     return (
         <div className="max-w-7xl mx-auto space-y-8 pb-12 animate-fade-in">
             <PageBanner 
-                image="/images/certificates-banner.png" 
+                image="images/certificates-banner.png" 
                 title={t('admin.certsTitle')} 
                 subtitle={t('admin.certsSubtitle')} 
                 icon={<Award className="w-7 h-7 text-white" />} 
@@ -517,4 +517,5 @@ export default function AdminCertificates() {
         </div>
     );
 }
+
 

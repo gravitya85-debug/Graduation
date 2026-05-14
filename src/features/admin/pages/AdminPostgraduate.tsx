@@ -174,7 +174,7 @@ export default function AdminPostgraduate() {
 
     return (
         <div className="max-w-7xl mx-auto space-y-6">
-            <PageBanner image="/images/postgraduate-banner.png" title={t('admin.postgradTitle')} subtitle={t('admin.postgradSubtitle')} icon={<GraduationCap className="w-7 h-7 text-white" />} gradient="from-purple-700/85 to-fuchsia-700/85" />
+            <PageBanner image="images/postgraduate-banner.png" title={t('admin.postgradTitle')} subtitle={t('admin.postgradSubtitle')} icon={<GraduationCap className="w-7 h-7 text-white" />} gradient="from-purple-700/85 to-fuchsia-700/85" />
 
             <div className="flex justify-end">
                 <button onClick={() => {
@@ -367,4 +367,5 @@ export default function AdminPostgraduate() {
         </div>
     );
 }
+
 

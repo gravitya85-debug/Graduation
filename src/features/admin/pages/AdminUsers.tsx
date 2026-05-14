@@ -84,7 +84,7 @@ export default function AdminUsers() {
 
     return (
         <div className="max-w-7xl mx-auto space-y-6">
-            <PageBanner image="/images/dashboard-bg.png" title={t('admin.usersTitle')} subtitle={t('admin.usersSubtitle')} icon={<Users className="w-7 h-7 text-white" />} gradient="from-indigo-700/85 to-violet-700/85" />
+            <PageBanner image="images/dashboard-bg.png" title={t('admin.usersTitle')} subtitle={t('admin.usersSubtitle')} icon={<Users className="w-7 h-7 text-white" />} gradient="from-indigo-700/85 to-violet-700/85" />
 
             <div className="relative">
                 <Search className="w-5 h-5 absolute rtl:right-4 ltr:left-4 top-3.5 text-gray-400" />
@@ -135,4 +135,5 @@ export default function AdminUsers() {
         </div>
     );
 }
+
 

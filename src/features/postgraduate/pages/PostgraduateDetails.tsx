@@ -139,7 +139,7 @@ export default function PostgraduateDetails() {
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800 group">
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent z-10" />
                         <img
-                            src={program.image_url || "/images/postgraduate-hero.jpg"}
+                            src={program.image_url || "images/postgraduate-hero.jpg"}
                             alt={program.title}
                             className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
                         />
@@ -277,4 +277,5 @@ export default function PostgraduateDetails() {
         </div>
     );
 }
+
 

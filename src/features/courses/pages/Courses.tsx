@@ -148,7 +148,7 @@ export default function Courses() {
     return (
         <div className="max-w-7xl mx-auto space-y-8 animate-fade-in-up pb-12">
             <PageBanner
-                image="/images/courses-banner.png"
+                image="images/courses-banner.png"
                 title={t('courses.title') || 'Graduate Hub Courses'}
                 subtitle={t('courses.subtitle') || 'Upgrade your skills, learn from experts, and land your dream job.'}
                 icon={<BookOpen className="w-7 h-7 text-white" />}
@@ -249,4 +249,5 @@ export default function Courses() {
         </div>
     );
 }
+
 

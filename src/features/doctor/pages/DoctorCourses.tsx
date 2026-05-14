@@ -103,7 +103,7 @@ export default function DoctorCourses() {
     return (
         <div className="max-w-7xl mx-auto space-y-6 pb-12">
             <PageBanner
-                image="/images/courses-banner.png"
+                image="images/courses-banner.png"
                 title={t('admin.coursesTitle') || 'My Courses'}
                 subtitle={t('admin.coursesSubtitle') || 'Manage academic content you provided'}
                 icon={<BookOpen className="w-7 h-7 text-white" />}
@@ -153,4 +153,5 @@ export default function DoctorCourses() {
         </div>
     );
 }
+
 

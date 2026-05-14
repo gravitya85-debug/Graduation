@@ -123,7 +123,7 @@ export default function Home() {
     return (
         <div className="max-w-7xl mx-auto space-y-8 animate-fade-in-up">
             <PageBanner
-                image="/images/dashboard-bg.png"
+                image="images/dashboard-bg.png"
                 title={t('home.welcome')}
                 subtitle={t('home.overview')}
                 icon={<TrendingUp className="w-7 h-7 text-white" />}
@@ -313,4 +313,5 @@ export default function Home() {
         </div>
     );
 }
+
 
