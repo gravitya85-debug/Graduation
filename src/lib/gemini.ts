@@ -1,16 +1,16 @@
 
 /**
- * AI Assistant Service using Groq (Ultra-fast & Free)
+ * AI Assistant Service using Cerebras (Ultra-fast & Free)
  */
 export async function askGemini(prompt: string) {
-    const apiKey = import.meta.env.VITE_GROQ_API_KEY;
+    const apiKey = import.meta.env.VITE_CEREBRAS_API_KEY;
 
     if (!apiKey) {
-        return "برجاء إضافة مفتاح Groq API (VITE_GROQ_API_KEY) في ملف .env لتفعيل المساعد الذكي.";
+        return "برجاء إضافة مفتاح Cerebras API (VITE_CEREBRAS_API_KEY) في ملف .env لتفعيل المساعد الذكي.";
     }
 
     try {
-        console.log("Asking AI via Groq...");
+        console.log("Asking AI via Cerebras...");
 
         const systemPrompt = `
             أنت مساعد ذكي لمنصة خريجي كلية التربية النوعية بجامعة كفر الشيخ.
@@ -29,7 +29,7 @@ export async function askGemini(prompt: string) {
             5. اجعل الإجابة مختصرة ومفيدة.
         `;
 
-        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        const response = await fetch('https://api.cerebras.ai/v1/chat/completions', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${apiKey}`,
@@ -40,7 +40,7 @@ export async function askGemini(prompt: string) {
                     { role: 'system', content: systemPrompt },
                     { role: 'user', content: prompt }
                 ],
-                model: 'llama-3.3-70b-versatile',
+                model: 'llama3.1-8b',
                 temperature: 0.7,
                 max_tokens: 1024,
             })
@@ -54,7 +54,7 @@ export async function askGemini(prompt: string) {
         const data = await response.json();
         return data.choices[0].message.content;
     } catch (error: any) {
-        console.error("Groq AI Error:", error);
-        return `عذراً، حدث خطأ أثناء الاتصال بمساعد الذكاء الاصطناعي: ${error.message || 'خطأ غير معروف'}. يرجى التأكد من صحة مفتاح Groq API.`;
+        console.error("Cerebras AI Error:", error);
+        return `عذراً، حدث خطأ أثناء الاتصال بمساعد الذكاء الاصطناعي: ${error.message || 'خطأ غير معروف'}. يرجى التأكد من صحة مفتاح Cerebras API.`;
     }
 }
