@@ -153,3 +153,4 @@ export default function DoctorCourses() {
         </div>
     );
 }
+
